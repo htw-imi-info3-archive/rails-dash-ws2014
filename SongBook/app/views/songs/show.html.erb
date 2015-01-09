@@ -4,6 +4,10 @@
   <strong>Title:</strong>
   <%= @song.title %>
 </p>
+<p>
+  <strong>Artist:</strong>
+  <%= link_to(@artist_name, @song.artist) %>
+</p>
 
 <p>
   <strong>Duration:</strong>

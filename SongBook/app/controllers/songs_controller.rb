@@ -10,6 +10,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    @artist_name = @song.artist ? @song.artist.name : "no artist"
   end
 
   # GET /songs/new
