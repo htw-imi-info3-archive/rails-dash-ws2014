@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Artist</th>
       <th>Duration</th>
       <th>Genre</th>
       <th colspan="3"></th>
@@ -13,9 +14,10 @@
   </thead>
 
   <tbody>
-    <% @songs.each do |song| %>
+    <% @songs_with_names.each do |song, artist_name| %>
       <tr>
         <td><%= song.title %></td>
+        <td><%= artist_name %></td>
         <td><%= song.duration %></td>
         <td><%= song.genre %></td>
         <td><%= link_to 'Show', song %></td>

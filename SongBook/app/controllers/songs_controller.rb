@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @songs = Song.all
+    @songs_with_names = Song.all.map{|s| [s, s.artist ? s.artist.name : ""]}
   end
 
   # GET /songs/1
