@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
-  before_action :set_song_artist_name, :set_artist_names, only: [:new,:edit]
+  before_action :set_song_artist_name, only: [:edit]
+  before_action :set_artist_names, only: [:new,:edit]
   # GET /songs
   # GET /songs.json
   def index
@@ -69,17 +70,17 @@ class SongsController < ApplicationController
      artist_name = params["artist_name"]
      artist = Artist.find_or_create_by(name: artist_name)
     end
-    
+
     # Use callbacks to share common setup or constraints between actions.
     def set_song
       @song = Song.find(params[:id])
     end
     def set_song_artist_name
       if params["artist_name"]
-        @song_artist_name = get_artist(params).name 
-      else 
+        @song_artist_name = get_artist(params).name
+      else
         @song_artist_name = @song.artist ? @song.artist.name : ""
-      end       
+      end
     end
 
     def set_artist_names
