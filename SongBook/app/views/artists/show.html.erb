@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1> Artist Show</h1>
 <p>
   <strong>Name:</strong>
   <%= @artist.name %>
@@ -13,6 +13,9 @@
     <% end %>
     </ul>
 
+<%= link_to 'Create new Song for this Artist', new_song_path(artist_name: @artist.name) %>
+
+<br/>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>

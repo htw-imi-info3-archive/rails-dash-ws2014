@@ -15,6 +15,23 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
+  <div class="field">
+  
+    <%= f.label :artist %><br>
+    
+    <input id="song_artist" name = "artist_name" type="text"
+    list = "artists"
+    value = "<%=@song_artist_name %>"/>
+
+    <datalist id ="artists">
+      <% @artist_names.each do | artist_name | %>
+      <option label ="<%=artist_name%>" />
+      <% end %>
+      </datalist>
+
+  </div>
+
   <div class="field">
     <%= f.label :duration %><br>
     <%= f.text_field :duration %>
