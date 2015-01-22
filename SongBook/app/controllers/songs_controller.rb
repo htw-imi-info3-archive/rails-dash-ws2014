@@ -4,6 +4,7 @@ class SongsController < ApplicationController
   before_action :set_artist_names, only: [:new,:edit]
   # GET /songs
   # GET /songs.json
+
   def index
     @songs = Song.all
     @songs_with_names = Song.all.map{|s| [s, s.artist ? s.artist.name : ""]}
